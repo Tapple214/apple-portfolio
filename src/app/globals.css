@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    color: #faf8f5;
+    background-color: #000000;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: #faf8f5;
+  }
+}
+
+/* Parallax and Layout Styles */
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Transform Utilities */
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-\[-600px\] {
+  transform: translateZ(-600px) scale(3);
+}
+
+.translate-z-\[-525px\] {
+  transform: translateZ(-525px) scale(2.75);
+}
+
+.translate-z-\[-400px\] {
+  transform: translateZ(-400px) scale(2.33333333);
+}
+
+.translate-z-\[-250px\] {
+  transform: translateZ(-250px) scale(1.833333333);
+}
+
+.translate-z-\[-125px\] {
+  transform: translateZ(-125px) scale(1.4167);
+}
+
+.translate-z-0 {
+  transform: translateZ(0) scale(1);
+}
+
+/* Button Effects */
+.btn {
+  border: 2px solid #c1b7e1;
+  border-radius: 9999px;
+  padding: 0.45rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #c1b7e1;
+  color: #0d0714;
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-text {
+  background: linear-gradient(
+    rgba(192, 191, 191, 0.174) 0%,
+    rgba(117, 1, 140, 0.264) 50%,
+    rgba(17, 0, 13, 0.349) 100%
+  );
+  background-size: cover;
+  transform: translateZ(0) scale(1);
+  z-index: 7;
+}
+
+/* Info Container */
+.info-container {
+  background-color: #0d0714;
+  transform: translateZ(0) scale(1);
+  z-index: 8;
+}
+
+@media (min-width: 768px) {
+  .info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .info-container img {
+    justify-self: end;
+    width: 75%;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1b7e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9187b1;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0714;
+}
+
+/* Social Icons */
+.social-container {
+  position: absolute;
+  right: 2.5rem;
+  top: 43rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-container i {
+  font-size: 1.5rem;
+}
+
+/* Content Sections */
+.content-section {
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 8;
+}
+
+.section-title {
+  text-align: left;
+  color: #e0dde9;
+}
+
+.experience-card {
+  background: rgba(193, 183, 225, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Update Hero Text */
+.intro-container {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Card Styles */
+.project-card,
+.art-card,
+.photo-card {
+  background: rgba(193, 183, 225, 0.05);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.art-card:hover,
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(193, 183, 225, 0.1);
+}
+
+/* Typing Animation */
+.typing-text {
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
