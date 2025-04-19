@@ -19,7 +19,7 @@ const projects = [
     description:
       "A web application built with TypeScript, serving as my personal portfolio to showcase my technical skills, projects, and experience in modern web development.",
     image: "/images/portfolio.png",
-    url: "https://tapple.vercel.app",
+    url: "https://tapple214.github.io/apple-portfolio/",
   },
 ];
 
