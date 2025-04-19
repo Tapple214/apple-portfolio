@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PageTitle from "./page-title";
+import { withBasePath } from "../utils/basePath";
 
 export default function AboutContent() {
   return (
@@ -92,7 +93,7 @@ export default function AboutContent() {
             <div className="mb-8">
               <div className="flex justify-center">
                 <Image
-                  src="/images/me.png"
+                  src={withBasePath("/images/me.png")}
                   alt="Apple's Photo"
                   width={300}
                   height={400}
@@ -224,7 +225,7 @@ export default function AboutContent() {
                 <ul className="flex gap-3 pt-3">
                   <li className="group relative">
                     <Image
-                      src="/images/singing.png"
+                      src={withBasePath("/images/singing.png")}
                       alt="Singing"
                       width={70}
                       height={70}
@@ -238,7 +239,7 @@ export default function AboutContent() {
                   </li>
                   <li className="group relative">
                     <Image
-                      src="/images/drawing.png"
+                      src={withBasePath("/images/drawing.png")}
                       alt="Apple's Photo"
                       width={70}
                       height={70}
@@ -249,7 +250,7 @@ export default function AboutContent() {
                   </li>
                   <li className="group relative">
                     <Image
-                      src="/images/photography.png"
+                      src={withBasePath("/images/photography.png")}
                       alt="Apple's Photo"
                       width={70}
                       height={70}

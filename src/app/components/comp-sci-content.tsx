@@ -3,6 +3,7 @@
 import { useState } from "react";
 import PageTitle from "./page-title";
 import Image from "next/image";
+import { withBasePath } from "../utils/basePath";
 
 const projects = [
   {
@@ -10,7 +11,7 @@ const projects = [
     name: "Worthy",
     description:
       "A full-stack web application built with Next.js that enforces sustainability by encouraging decluttering through bartering serving hosting 2000+ users. Features include authentication, real-time chat, and a responsive design.",
-    image: "/images/worthy.png",
+    image: withBasePath("/images/worthy.png"),
     url: "https://worthy.mono.sg/",
   },
   {
@@ -18,7 +19,7 @@ const projects = [
     name: "Portfolio",
     description:
       "A web application built with TypeScript, serving as my personal portfolio to showcase my technical skills, projects, and experience in modern web development.",
-    image: "/images/portfolio.png",
+    image: withBasePath("/images/portfolio.png"),
     url: "https://tapple214.github.io/apple-portfolio/",
   },
 ];

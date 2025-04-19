@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { withBasePath } from "../utils/basePath";
+
 export default function PageTitle({ title }: { title: string }) {
   return (
     <div className="flex justify-start items-center mb-10">
       <Image
-        src="/images/apple-icon.png"
+        src={withBasePath("/images/apple-icon.png")}
         alt="Apple's Photo"
         width={30}
         height={30}

@@ -9,6 +9,7 @@ import ArtContent from "./components/art-content";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import useScrollDir from "./components/useScrollDir";
+import { withBasePath } from "./utils/basePath";
 
 export default function Home() {
   const { ref, inView } = useInView({ threshold: 0.6 }); // Consider the element as in view when 60% of it is visible
@@ -32,12 +33,30 @@ export default function Home() {
         {/* Welcome Section */}
         <div className="parallax__group">
           {/* Parallax Layers */}
-          <div className="parallax__layer l1 absolute inset-0 bg-[url('/images/l1.png')] bg-center bg-cover transform translate-z-[-600px] z-[1]"></div>
-          <div className="parallax__layer l2 absolute inset-0 bg-[url('/images/l2.png')] bg-center bg-cover transform translate-z-[-525px] z-[2]"></div>
-          <div className="parallax__layer l3 absolute inset-0 bg-[url('/images/l3.png')] bg-center bg-cover transform translate-z-[-400px] z-[3]"></div>
-          <div className="parallax__layer l4 absolute inset-0 bg-[url('/images/l4.png')] bg-center bg-cover transform translate-z-[-250px] z-[4]"></div>
-          <div className="parallax__layer l5 absolute inset-0 bg-[url('/images/l5.png')] bg-center bg-cover transform translate-z-[-125px] z-[5]"></div>
-          <div className="parallax__layer l6 absolute inset-0 bg-[url('/images/l6.png')] bg-center bg-cover transform translate-z-0 z-[6]"></div>
+          <div 
+            className="parallax__layer l1 absolute inset-0 bg-center bg-cover transform translate-z-[-600px] z-[1]"
+            style={{ backgroundImage: `url(${withBasePath("/images/l1.png")})` }}
+          ></div>
+          <div 
+            className="parallax__layer l2 absolute inset-0 bg-center bg-cover transform translate-z-[-525px] z-[2]"
+            style={{ backgroundImage: `url(${withBasePath("/images/l2.png")})` }}
+          ></div>
+          <div 
+            className="parallax__layer l3 absolute inset-0 bg-center bg-cover transform translate-z-[-400px] z-[3]"
+            style={{ backgroundImage: `url(${withBasePath("/images/l3.png")})` }}
+          ></div>
+          <div 
+            className="parallax__layer l4 absolute inset-0 bg-center bg-cover transform translate-z-[-250px] z-[4]"
+            style={{ backgroundImage: `url(${withBasePath("/images/l4.png")})` }}
+          ></div>
+          <div 
+            className="parallax__layer l5 absolute inset-0 bg-center bg-cover transform translate-z-[-125px] z-[5]"
+            style={{ backgroundImage: `url(${withBasePath("/images/l5.png")})` }}
+          ></div>
+          <div 
+            className="parallax__layer l6 absolute inset-0 bg-center bg-cover transform translate-z-0 z-[6]"
+            style={{ backgroundImage: `url(${withBasePath("/images/l6.png")})` }}
+          ></div>
 
           {/* Hero Text */}
           <div className="hero-text absolute inset-0">
@@ -46,7 +65,7 @@ export default function Home() {
 
             <div className="intro-container">
               <Image
-                src="/images/hi-im-apple.png"
+                src={withBasePath("/images/hi-im-apple.png")}
                 alt="Hi, I'm Apple!"
                 width={600}
                 height={400}
@@ -86,7 +105,7 @@ export default function Home() {
             className="absolute top-[400px] right-0 z-10 w-[250px] hidden md:block"
           >
             <Image
-              src="/images/camera.png"
+              src={withBasePath("/images/camera.png")}
               alt="Camera"
               width={250}
               height={700}

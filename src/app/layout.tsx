@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Montserrat } from "next/font/google";
+import { withBasePath } from "./utils/basePath";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -11,8 +12,8 @@ export const metadata = {
   title: "Apple's Portfolio",
   description: "A tech-art enthusiast portfolio",
   icons: {
-    icon: [{ url: "/images/apple-icon.png", sizes: "any" }],
-    apple: [{ url: "/images/apple-icon.png", sizes: "any" }],
+    icon: [{ url: withBasePath("/images/apple-icon.png"), sizes: "any" }],
+    apple: [{ url: withBasePath("/images/apple-icon.png"), sizes: "any" }],
   },
 };
 
@@ -24,8 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/apple-icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/images/apple-icon.png" />
+        <link
+          rel="icon"
+          href={withBasePath("/images/apple-icon.png")}
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href={withBasePath("/images/apple-icon.png")}
+        />
         <link
           href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
           rel="stylesheet"

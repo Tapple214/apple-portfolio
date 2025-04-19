@@ -5,6 +5,7 @@ import Link from "next/link";
 import PageTitle from "./page-title";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { withBasePath } from "../utils/basePath";
 
 interface ArtItem {
   id: number;
@@ -54,7 +55,7 @@ export default function ArtContent() {
       title: "Descarga Poster",
       alt: "Descarga Poster",
       description: "Created with Canva. Used to promote a school event.",
-      src: "/images/a1.png",
+      src: withBasePath("/images/a1.png"),
       rotation: -5,
       zIndex: 1,
       w: 200,
@@ -66,7 +67,7 @@ export default function ArtContent() {
       title: "Short Animation",
       alt: "Short Animation",
       description: "GIF created with Procreate.",
-      src: "/images/a3.png",
+      src: withBasePath("/images/a3.png"),
       rotation: -2,
       zIndex: 1,
       w: 150,
@@ -78,7 +79,7 @@ export default function ArtContent() {
       title: "Vector-style Art",
       alt: "Vector-style Art",
       description: "Created with Photoshop (Used for this website).",
-      src: "/images/a2.jpg",
+      src: withBasePath("/images/a2.jpg"),
       rotation: 3,
       zIndex: 1,
       w: 250,
@@ -91,7 +92,7 @@ export default function ArtContent() {
       alt: "Head study",
       description:
         "A study done to better understand human heads and color layering.",
-      src: "/images/a4.png",
+      src: withBasePath("/images/a4.png"),
       rotation: 4,
       zIndex: 1,
       w: 150,
@@ -103,7 +104,7 @@ export default function ArtContent() {
       title: "Jellyfish",
       alt: "Jellyfish",
       description: "Digital drawing",
-      src: "/images/a5.png",
+      src: withBasePath("/images/a5.png"),
       rotation: -3,
       zIndex: 1,
       w: 200,
@@ -115,7 +116,7 @@ export default function ArtContent() {
       title: "Mixed Media Campaign",
       alt: "Mixed Media Campaign",
       description: "Used to promote a campaign for a good cause.",
-      src: "/images/a6.png",
+      src: withBasePath("/images/a6.png"),
       rotation: 3,
       zIndex: 1,
       w: 200,
@@ -127,7 +128,7 @@ export default function ArtContent() {
       title: "Hands",
       alt: "Hands",
       description: "Mixed media art using ink and guoache.",
-      src: "/images/a7.png",
+      src: withBasePath("/images/a7.png"),
       rotation: -3,
       zIndex: 1,
       w: 150,
@@ -139,7 +140,7 @@ export default function ArtContent() {
       title: "Blood, sweat and tears",
       alt: "Blood, sweat and tears",
       description: "Ink drawing of a drago; won an art competition.",
-      src: "/images/a8.jpg",
+      src: withBasePath("/images/a8.jpg"),
       rotation: -4,
       zIndex: 1,
       w: 200,
@@ -151,7 +152,7 @@ export default function ArtContent() {
       title: "Avatar",
       alt: "Avatar",
       description: "Charicature study of characters from Avatar.",
-      src: "/images/a9.png",
+      src: withBasePath("/images/a9.png"),
       rotation: -3,
       zIndex: 1,
       w: 150,
@@ -163,7 +164,7 @@ export default function ArtContent() {
       title: "Ghibli",
       alt: "Ghibli",
       description: "Guoache painting of a customized Ghibli scene.",
-      src: "/images/a10.png",
+      src: withBasePath("/images/a10.png"),
       rotation: -3,
       zIndex: 1,
       w: 150,

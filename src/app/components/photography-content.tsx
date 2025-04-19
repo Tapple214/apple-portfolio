@@ -3,60 +3,61 @@
 import PageTitle from "./page-title";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { withBasePath } from "../utils/basePath";
 
 const photos = [
   {
     id: 1,
-    src: "/images/p1.jpg",
+    src: withBasePath("/images/p1.jpg"),
     alt: "Camping Photoshoot",
     className: "col-span-1 md:col-span-2 h-[400px] md:h-auto md:row-span-3",
     showInMobile: true,
   },
   {
     id: 2,
-    src: "/images/p2.png",
+    src: withBasePath("/images/p2.png"),
     alt: "Cinematic Back Shot",
     className: "col-span-1 md:col-span-2 h-[300px] md:h-auto md:row-span-1",
     showInMobile: true,
   },
   {
     id: 3,
-    src: "/images/p3.jpg",
+    src: withBasePath("/images/p3.jpg"),
     alt: "Birthday Photoshoot",
     className: "col-span-1 md:col-span-2 h-[300px] md:h-auto md:row-span-1",
     showInMobile: true,
   },
   {
     id: 4,
-    src: "/images/p4.png",
+    src: withBasePath("/images/p4.png"),
     alt: "Lilies",
     className: "col-span-1 md:col-span-4 h-[400px] md:h-auto md:row-span-2",
     showInMobile: false,
   },
   {
     id: 5,
-    src: "/images/p5.jpg",
+    src: withBasePath("/images/p5.jpg"),
     alt: "Sky",
     className: "col-span-1 md:col-span-3 h-[300px] md:h-auto md:row-span-2",
     showInMobile: true,
   },
   {
     id: 6,
-    src: "/images/p6.png",
+    src: withBasePath("/images/p6.png"),
     alt: "Editorial Photoshoot",
     className: "col-span-1 md:col-span-2 h-[400px] md:h-auto md:row-span-2",
     showInMobile: true,
   },
   {
     id: 7,
-    src: "/images/p7.jpg",
+    src: withBasePath("/images/p7.jpg"),
     alt: "Balcony Shot",
     className: "col-span-1 h-[300px] md:h-auto md:row-span-1",
     showInMobile: true,
   },
   {
     id: 8,
-    src: "/images/p8.png",
+    src: withBasePath("/images/p8.png"),
     alt: "Graduation Photoshoot",
     className: "col-span-1 h-[300px] md:h-auto md:row-span-1",
     showInMobile: true,
