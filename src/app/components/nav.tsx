@@ -1,7 +1,21 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import PageTitle from "./page-title";
 import Link from "next/link";
 
 export default function Nav() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };    
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
     <nav className="absolute w-full top-4">
       <ul className="flex justify-between items-start px-4 text-base w-full">
@@ -17,7 +31,7 @@ export default function Nav() {
               href="#comp-sci"
               className="hover:text-[#e0dde9] transition-colors text-[#c1b7e1] font-thin"
             >
-              Tech Projects
+             {isMobile ? 'Tech' : 'Tech Projects'} 
             </Link>
           </li>
           <li>
@@ -25,7 +39,7 @@ export default function Nav() {
               href="#art"
               className="hover:text-[#e0dde9] transition-colors text-[#c1b7e1] font-thin"
             >
-              Art Portfolio
+              {isMobile ? 'Art' : 'Art Portfolio'}
             </Link>
           </li>
           <li>
@@ -33,12 +47,12 @@ export default function Nav() {
               href="#photography"
               className="hover:text-[#e0dde9] transition-colors text-[#c1b7e1] font-thin"
             >
-              Photography Gallery
+              {isMobile ? 'Photography' : 'Photography Gallery'}
             </Link>
           </li>
           <li>
             <Link href="#get-to-know-me" className="btn">
-              About Me
+            {isMobile ? 'Me' : 'About Me'}
             </Link>
           </li>
         </div>
