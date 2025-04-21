@@ -82,8 +82,8 @@ export default function ArtContent() {
       src: withBasePath("/images/a2.jpg"),
       rotation: 3,
       zIndex: 1,
-      w: 250,
-      h: 150,
+      w: 300,
+      h: 200,
       initialPosition: { x: 0.5, y: 0.2 },
     },
     {
@@ -119,9 +119,9 @@ export default function ArtContent() {
       src: withBasePath("/images/a6.png"),
       rotation: 3,
       zIndex: 1,
-      w: 200,
-      h: 250,
-      initialPosition: { x: 0.35, y: 0.4 },
+      w: 220,
+      h: 295,
+      initialPosition: { x: 0.40, y: 0.35 },
     },
     {
       id: 7,
@@ -145,7 +145,7 @@ export default function ArtContent() {
       zIndex: 1,
       w: 200,
       h: 200,
-      initialPosition: { x: 0.8, y: 0.05 },
+      initialPosition: { x: 0.82, y: 0.05 },
     },
     {
       id: 9,
@@ -167,9 +167,9 @@ export default function ArtContent() {
       src: withBasePath("/images/a10.png"),
       rotation: -3,
       zIndex: 1,
-      w: 150,
-      h: 150,
-      initialPosition: { x: 0.25, y: 0.7 },
+      w: 225,
+      h: 225,
+      initialPosition: { x: 0.25, y: 0.60 },
     },
   ]);
 
@@ -207,7 +207,7 @@ export default function ArtContent() {
     <>
       <PageTitle title="Art Portfolio" />
 
-      <div className="bg-white">
+      <div>
         {/* Mobile Carousel View */}
         <div className={`${isMobile ? "block" : "hidden"} relative mb-12 flex justify-center items-center`}>
           <div className="carousel-container w-full relative overflow-hidden">
@@ -262,7 +262,7 @@ export default function ArtContent() {
         {/* Desktop Draggable View Container */}
         <div className={`${!isMobile ? "flex" : "hidden"} justify-center items-center mb-12`}>
           {/* Draggable Area */}
-          <div className="relative h-[600px] max-w-6xl w-full bg-blue-500">
+          <div className="relative h-[600px] max-w-6xl w-full">
             {isLoaded &&
               artItems.map((item) => (
                 <Draggable
