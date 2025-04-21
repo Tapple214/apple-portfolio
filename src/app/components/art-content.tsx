@@ -210,7 +210,7 @@ export default function ArtContent() {
       <div>
         {/* Mobile Carousel View */}
         <div className={`${isMobile ? "block" : "hidden"} relative mb-12 flex justify-center items-center`}>
-          <div className="carousel-container w-full relative overflow-hidden">
+          <div className="carousel-container w-full relative overflow-hidden flex flex-col">
             <div
               className="carousel flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -240,22 +240,22 @@ export default function ArtContent() {
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* Navigation Buttons - Now outside the carousel container */}
-          <div className="flex justify-center gap-4 mt-6">
-            <button
-              onClick={handlePrev}
-              className="btn bg-[#2a2a2a] text-white px-4 py-2 rounded hover:bg-[#3a3a3a]"
-            >
-              ←
-            </button>
-            <button
-              onClick={handleNext}
-              className="btn bg-[#2a2a2a] text-white px-4 py-2 rounded hover:bg-[#3a3a3a]"
-            >
-              →
-            </button>
+            {/* Navigation Buttons - Now inside the carousel container */}
+            <div className="flex justify-center gap-4 mt-5 pt-4 mb-2">
+              <button
+                onClick={handlePrev}
+                className="btn bg-[#2a2a2a] text-white px-4 py-2 rounded hover:bg-[#3a3a3a]"
+              >
+                ←
+              </button>
+              <button
+                onClick={handleNext}
+                className="btn bg-[#2a2a2a] text-white px-4 py-2 rounded hover:bg-[#3a3a3a]"
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
 
