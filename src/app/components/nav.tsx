@@ -14,7 +14,7 @@ export default function Nav() {
           <PageTitle title="" />
         </li>
         ) : (
-          <li className="pt-1">
+          <li className="pt-1 ps-[2rem]">
             <PageTitle title="Portfolio" />
           </li>
         )}
