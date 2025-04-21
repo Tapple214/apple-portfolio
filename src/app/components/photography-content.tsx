@@ -1,8 +1,9 @@
 "use client";
 
+import { useScreenSize } from "../hooks/useScreenSize";
 import PageTitle from "./page-title";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { withBasePath } from "../utils/basePath";
 
 const photos = [
@@ -66,17 +67,7 @@ const photos = [
 
 export default function PhotographyContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const updateSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+  const isMobile = useScreenSize();
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -93,7 +84,7 @@ export default function PhotographyContent() {
   return (
     <>
       <PageTitle title="Photography Gallery" />
-      <div className="max-w-7xl mx-4 md:mx-7 mb-10 pb-5">
+      <div className="max-w-7xl md:mx-7 mb-10 pb-5">
         {/* Mobile Carousel View */}
         <div className={`${isMobile ? "block" : "hidden"} relative mb-12`}>
           <div className="carousel-container w-full relative overflow-hidden">
@@ -108,7 +99,7 @@ export default function PhotographyContent() {
                     key={photo.id}
                     className="carousel-item w-full flex-shrink-0 flex justify-center items-center px-4"
                   >
-                    <div className="bg-[#1a1a1a] rounded-lg shadow-md w-full aspect-[3/4] relative overflow-hidden">
+                    <div className="bg-[#1a1a1a] rounded-lg shadow-md w-full max-w-5xl aspect-[3/4] relative overflow-hidden">
                       <Image
                         src={photo.src}
                         alt={photo.alt}

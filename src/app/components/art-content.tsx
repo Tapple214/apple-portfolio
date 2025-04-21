@@ -6,6 +6,7 @@ import PageTitle from "./page-title";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { withBasePath } from "../utils/basePath";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 interface ArtItem {
   id: number;
@@ -27,7 +28,7 @@ export default function ArtContent() {
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useScreenSize();
 
   useEffect(() => {
     const updateSize = () => {
@@ -39,7 +40,6 @@ export default function ArtContent() {
         });
         setIsLoaded(true);
       }
-      setIsMobile(window.innerWidth < 768); // md breakpoint
     };
 
     // Use requestAnimationFrame to ensure DOM is ready
@@ -82,8 +82,8 @@ export default function ArtContent() {
       src: withBasePath("/images/a2.jpg"),
       rotation: 3,
       zIndex: 1,
-      w: 250,
-      h: 150,
+      w: 300,
+      h: 200,
       initialPosition: { x: 0.5, y: 0.2 },
     },
     {
@@ -119,9 +119,9 @@ export default function ArtContent() {
       src: withBasePath("/images/a6.png"),
       rotation: 3,
       zIndex: 1,
-      w: 200,
-      h: 250,
-      initialPosition: { x: 0.35, y: 0.4 },
+      w: 220,
+      h: 295,
+      initialPosition: { x: 0.40, y: 0.35 },
     },
     {
       id: 7,
@@ -145,7 +145,7 @@ export default function ArtContent() {
       zIndex: 1,
       w: 200,
       h: 200,
-      initialPosition: { x: 0.75, y: 0.05 },
+      initialPosition: { x: 0.82, y: 0.05 },
     },
     {
       id: 9,
@@ -155,9 +155,9 @@ export default function ArtContent() {
       src: withBasePath("/images/a9.png"),
       rotation: -3,
       zIndex: 1,
-      w: 150,
-      h: 150,
-      initialPosition: { x: 0.6, y: 0.35 },
+      w: 200,
+      h: 200,
+      initialPosition: { x: 0.7, y: 0.35 },
     },
     {
       id: 10,
@@ -167,9 +167,9 @@ export default function ArtContent() {
       src: withBasePath("/images/a10.png"),
       rotation: -3,
       zIndex: 1,
-      w: 150,
-      h: 150,
-      initialPosition: { x: 0.25, y: 0.7 },
+      w: 225,
+      h: 225,
+      initialPosition: { x: 0.25, y: 0.60 },
     },
   ]);
 
@@ -207,9 +207,9 @@ export default function ArtContent() {
     <>
       <PageTitle title="Art Portfolio" />
 
-      <div className="max-w-6xl mx-7">
+      <div>
         {/* Mobile Carousel View */}
-        <div className={`${isMobile ? "block" : "hidden"} relative mb-12`}>
+        <div className={`${isMobile ? "block" : "hidden"} relative mb-12 flex justify-center items-center`}>
           <div className="carousel-container w-full relative overflow-hidden">
             <div
               className="carousel flex transition-transform duration-500 ease-in-out"
@@ -220,7 +220,7 @@ export default function ArtContent() {
                   key={item.id}
                   className="carousel-item w-full flex-shrink-0 flex justify-center items-center px-4"
                 >
-                  <div className="bg-[#1a1a1a] rounded-lg shadow-md w-full max-w-sm">
+                  <div className="bg-[#1a1a1a] rounded-lg shadow-md w-full max-w-5xl">
                     <div className="relative aspect-square">
                       <Image
                         src={item.src}
@@ -259,72 +259,71 @@ export default function ArtContent() {
           </div>
         </div>
 
-        {/* Desktop Draggable View */}
-        <div
-          className={`${
-            !isMobile ? "block" : "hidden"
-          } relative h-[600px] mb-12`}
-        >
-          {isLoaded &&
-            artItems.map((item) => (
-              <Draggable
-                key={item.id}
-                defaultPosition={getActualPosition(item)}
-                onStart={() => bringToFront(item.id)}
-                bounds="parent"
-              >
-                <div
-                  className="absolute cursor-move select-none"
-                  style={{
-                    transform: `rotate(${item.rotation}deg)`,
-                    zIndex: item.zIndex,
-                  }}
+        {/* Desktop Draggable View Container */}
+        <div className={`${!isMobile ? "flex" : "hidden"} justify-center items-center mb-12`}>
+          {/* Draggable Area */}
+          <div className="relative h-[600px] max-w-6xl w-full">
+            {isLoaded &&
+              artItems.map((item) => (
+                <Draggable
+                  key={item.id}
+                  defaultPosition={getActualPosition(item)}
+                  onStart={() => bringToFront(item.id)}
+                  bounds="parent"
                 >
                   <div
-                    className="group relative"
+                    className="absolute cursor-move select-none"
                     style={{
                       transform: `rotate(${item.rotation}deg)`,
+                      zIndex: item.zIndex,
                     }}
                   >
-                    {/* Art Frame */}
                     <div
-                      className="bg-[#1a1a1a] shadow-lg transition-transform duration-200 hover:shadow-xl"
-                      style={{ width: `${item.w}px`, height: `${item.h}px` }}
+                      className="group relative"
+                      style={{
+                        transform: `rotate(${item.rotation}deg)`,
+                      }}
                     >
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        width={item.w}
-                        height={item.h}
-                        className="object-cover w-full h-full"
-                        priority
-                      />
-                    </div>
+                      {/* Art Frame */}
+                      <div
+                        className="bg-[#1a1a1a] shadow-lg transition-transform duration-200 hover:shadow-xl"
+                        style={{ width: `${item.w}px`, height: `${item.h}px` }}
+                      >
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          width={item.w}
+                          height={item.h}
+                          className="object-cover w-full h-full"
+                          priority
+                        />
+                      </div>
 
-                    {/* Hover Info */}
-                    <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <p className="text-[#e0dde9]">{item.title}</p>
-                        <p className="text-[#c1b7e190] text-sm font-thin">
-                          {item.description}
-                        </p>
+                      {/* Hover Info */}
+                      <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                        <div className="text-center p-4">
+                          <p className="text-[#e0dde9]">{item.title}</p>
+                          <p className="text-[#c1b7e190] text-sm font-thin">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Draggable>
-            ))}
+                </Draggable>
+              ))}
 
-          {/* Centered View More Art Button - Only show on desktop */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="pointer-events-auto">
-              <Link
-                href="https://www.instagram.com/tarts_.4/"
-                target="_blank"
-                className="btn bg-[#0d0713]/90 hover:bg-[#c1b7e1]"
-              >
-                View More Art
-              </Link>
+            {/* Centered View More Art Button - Only show on desktop */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="pointer-events-auto">
+                <Link
+                  href="https://www.instagram.com/tarts_.4/"
+                  target="_blank"
+                  className="btn bg-[#0d0713]/90 hover:bg-[#c1b7e1]"
+                >
+                  View More Art
+                </Link>
+              </div>
             </div>
           </div>
         </div>
