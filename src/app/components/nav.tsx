@@ -8,10 +8,18 @@ export default function Nav() {
   return (
     <nav className="absolute w-full top-4">
       <ul className="flex justify-between items-start pe-4 text-base w-full">
-        {/* Left side - Portfolio title */}
-        <li className="pt-1">
-          <PageTitle title="Portfolio" />
+
+        {isMobile ? (
+          <li className="pt-1">
+          <PageTitle title="" />
         </li>
+        ) : (
+          <li className="pt-1">
+            <PageTitle title="Portfolio" />
+          </li>
+        )}
+
+     
 
         {/* Right side - Navigation links */}
         <div className="flex space-x-6 items-center me-5">
