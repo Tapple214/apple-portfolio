@@ -207,7 +207,7 @@ export default function ArtContent() {
     <>
       <PageTitle title="Art Portfolio" />
 
-      <div className="max-w-6xl mx-7">
+      <div className="max-w-6xl">
         {/* Mobile Carousel View */}
         <div className={`${isMobile ? "block" : "hidden"} relative mb-12`}>
           <div className="carousel-container w-full relative overflow-hidden">
@@ -220,7 +220,7 @@ export default function ArtContent() {
                   key={item.id}
                   className="carousel-item w-full flex-shrink-0 flex justify-center items-center px-4"
                 >
-                  <div className="bg-[#1a1a1a] rounded-lg shadow-md w-full max-w-sm">
+                  <div className="bg-[#1a1a1a] rounded-lg shadow-md w-full max-w-5xl">
                     <div className="relative aspect-square">
                       <Image
                         src={item.src}
