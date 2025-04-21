@@ -3,7 +3,7 @@ import { withBasePath } from "../utils/basePath";
 
 export default function PageTitle({ title }: { title: string }) {
   return (
-    <div className="flex justify-start items-center mb-10">
+    <div className="section-title flex justify-start items-center mb-10">
       <Image
         src={withBasePath("/images/apple-icon.png")}
         alt="Apple's Photo"
@@ -13,7 +13,7 @@ export default function PageTitle({ title }: { title: string }) {
         priority
       />
       &nbsp;&nbsp;&nbsp;
-      <h2 className="section-title pt-1">{title}</h2>
+      <h2 className="pt-1">{title}</h2>
     </div>
   );
 }

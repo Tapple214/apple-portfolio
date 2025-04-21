@@ -18,9 +18,9 @@ export default function Nav() {
 
   return (
     <nav className="absolute w-full top-4">
-      <ul className="flex justify-between items-start px-4 text-base w-full">
+      <ul className="flex justify-between items-start pe-4 text-base w-full">
         {/* Left side - Portfolio title */}
-        <li className="pt-1 ps-4">
+        <li className="pt-1">
           <PageTitle title="Portfolio" />
         </li>
 
