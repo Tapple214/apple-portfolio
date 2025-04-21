@@ -1,20 +1,9 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useScreenSize } from "../hooks/useScreenSize";
 import PageTitle from "./page-title";
 import Link from "next/link";
 
 export default function Nav() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const updateSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };    
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+  const isMobile = useScreenSize();
 
   return (
     <nav className="absolute w-full top-4">

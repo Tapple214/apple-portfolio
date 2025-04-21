@@ -1,8 +1,9 @@
 "use client";
 
+import { useScreenSize } from "../hooks/useScreenSize";
 import PageTitle from "./page-title";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { withBasePath } from "../utils/basePath";
 
 const photos = [
@@ -66,17 +67,7 @@ const photos = [
 
 export default function PhotographyContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const updateSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+  const isMobile = useScreenSize();
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>

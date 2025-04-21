@@ -6,6 +6,7 @@ import PageTitle from "./page-title";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { withBasePath } from "../utils/basePath";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 interface ArtItem {
   id: number;
@@ -27,7 +28,7 @@ export default function ArtContent() {
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useScreenSize();
 
   useEffect(() => {
     const updateSize = () => {
@@ -39,7 +40,6 @@ export default function ArtContent() {
         });
         setIsLoaded(true);
       }
-      setIsMobile(window.innerWidth < 768); // md breakpoint
     };
 
     // Use requestAnimationFrame to ensure DOM is ready
