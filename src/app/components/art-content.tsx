@@ -145,7 +145,7 @@ export default function ArtContent() {
       zIndex: 1,
       w: 200,
       h: 200,
-      initialPosition: { x: 0.75, y: 0.05 },
+      initialPosition: { x: 0.8, y: 0.05 },
     },
     {
       id: 9,
@@ -155,9 +155,9 @@ export default function ArtContent() {
       src: withBasePath("/images/a9.png"),
       rotation: -3,
       zIndex: 1,
-      w: 150,
-      h: 150,
-      initialPosition: { x: 0.6, y: 0.35 },
+      w: 200,
+      h: 200,
+      initialPosition: { x: 0.7, y: 0.35 },
     },
     {
       id: 10,
@@ -207,9 +207,9 @@ export default function ArtContent() {
     <>
       <PageTitle title="Art Portfolio" />
 
-      <div className="max-w-6xl">
+      <div className="bg-white">
         {/* Mobile Carousel View */}
-        <div className={`${isMobile ? "block" : "hidden"} relative mb-12`}>
+        <div className={`${isMobile ? "block" : "hidden"} relative mb-12 flex justify-center items-center`}>
           <div className="carousel-container w-full relative overflow-hidden">
             <div
               className="carousel flex transition-transform duration-500 ease-in-out"
@@ -259,72 +259,71 @@ export default function ArtContent() {
           </div>
         </div>
 
-        {/* Desktop Draggable View */}
-        <div
-          className={`${
-            !isMobile ? "block" : "hidden"
-          } relative h-[600px] mb-12`}
-        >
-          {isLoaded &&
-            artItems.map((item) => (
-              <Draggable
-                key={item.id}
-                defaultPosition={getActualPosition(item)}
-                onStart={() => bringToFront(item.id)}
-                bounds="parent"
-              >
-                <div
-                  className="absolute cursor-move select-none"
-                  style={{
-                    transform: `rotate(${item.rotation}deg)`,
-                    zIndex: item.zIndex,
-                  }}
+        {/* Desktop Draggable View Container */}
+        <div className={`${!isMobile ? "flex" : "hidden"} justify-center items-center mb-12`}>
+          {/* Draggable Area */}
+          <div className="relative h-[600px] max-w-6xl w-full bg-blue-500">
+            {isLoaded &&
+              artItems.map((item) => (
+                <Draggable
+                  key={item.id}
+                  defaultPosition={getActualPosition(item)}
+                  onStart={() => bringToFront(item.id)}
+                  bounds="parent"
                 >
                   <div
-                    className="group relative"
+                    className="absolute cursor-move select-none"
                     style={{
                       transform: `rotate(${item.rotation}deg)`,
+                      zIndex: item.zIndex,
                     }}
                   >
-                    {/* Art Frame */}
                     <div
-                      className="bg-[#1a1a1a] shadow-lg transition-transform duration-200 hover:shadow-xl"
-                      style={{ width: `${item.w}px`, height: `${item.h}px` }}
+                      className="group relative"
+                      style={{
+                        transform: `rotate(${item.rotation}deg)`,
+                      }}
                     >
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        width={item.w}
-                        height={item.h}
-                        className="object-cover w-full h-full"
-                        priority
-                      />
-                    </div>
+                      {/* Art Frame */}
+                      <div
+                        className="bg-[#1a1a1a] shadow-lg transition-transform duration-200 hover:shadow-xl"
+                        style={{ width: `${item.w}px`, height: `${item.h}px` }}
+                      >
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          width={item.w}
+                          height={item.h}
+                          className="object-cover w-full h-full"
+                          priority
+                        />
+                      </div>
 
-                    {/* Hover Info */}
-                    <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <p className="text-[#e0dde9]">{item.title}</p>
-                        <p className="text-[#c1b7e190] text-sm font-thin">
-                          {item.description}
-                        </p>
+                      {/* Hover Info */}
+                      <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                        <div className="text-center p-4">
+                          <p className="text-[#e0dde9]">{item.title}</p>
+                          <p className="text-[#c1b7e190] text-sm font-thin">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Draggable>
-            ))}
+                </Draggable>
+              ))}
 
-          {/* Centered View More Art Button - Only show on desktop */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="pointer-events-auto">
-              <Link
-                href="https://www.instagram.com/tarts_.4/"
-                target="_blank"
-                className="btn bg-[#0d0713]/90 hover:bg-[#c1b7e1]"
-              >
-                View More Art
-              </Link>
+            {/* Centered View More Art Button - Only show on desktop */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="pointer-events-auto">
+                <Link
+                  href="https://www.instagram.com/tarts_.4/"
+                  target="_blank"
+                  className="btn bg-[#0d0713]/90 hover:bg-[#c1b7e1]"
+                >
+                  View More Art
+                </Link>
+              </div>
             </div>
           </div>
         </div>
