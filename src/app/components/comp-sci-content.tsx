@@ -35,8 +35,8 @@ const projects = [
     name: "SG Odyssey",
     description:
       "(UI only) A RESTfulpersonal blog website that possesses the ability to enable users to post, delete, edit, and view blogs. This was created using Node.js, Express, and MongoDB.",
-    image: withBasePath("/images/portfolio.png"),
-    url: "https://tapple214.github.io/apple-portfolio/",
+    image: withBasePath("/images/sg-odyssey.png"),
+    url: "#",
   },
 ];
 
