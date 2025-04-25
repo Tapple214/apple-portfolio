@@ -14,7 +14,7 @@ export default function AboutContent() {
             <div className="mb-8">
               {/* <h3 className="text-2xl mb-4 text-[#e0dde9]">Hello!</h3> */}
               <p className="font-normal mb-6 text-[#c1b7e1]">
-                Hello, Apple here! A Filipino-Myanmar creative and computer
+                Hello, Apple here! A creative and computer
                 science student based in Singapore.
                 <br />
                 <br />
@@ -83,7 +83,7 @@ export default function AboutContent() {
             <div className="mt-6">
               <h3 className="text-2xl mb-4 text-[#e0dde9]">Languages Spoken</h3>
               <p className="font-normal text-[#c1b7e1]">
-                English, Filipino, Bisaya, Burmese
+                English, Filipino, Bisaya
               </p>
             </div>
           </div>
@@ -200,19 +200,17 @@ export default function AboutContent() {
 
               <div className="mb-8">
                 <h3 className="text-2xl mb-4 text-[#e0dde9]">
-                  Programming Languages
+                  Programming Tools
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <ul className="space-y-2 font-normal text-[#c1b7e190]">
-                      <li>HTML </li>
-                      <li>CSS </li>
-                      <li>Python </li>
+                      <li>React/Next JS </li>
+                      <li>Bootstrap/Tailwind </li>
                     </ul>
                   </div>
                   <div>
                     <ul className="space-y-2 font-normal text-[#c1b7e190]">
-                      <li>SQL </li>
                       <li>Javascript </li>
                       <li>Typescript </li>
                     </ul>
