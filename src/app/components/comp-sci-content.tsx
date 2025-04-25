@@ -22,6 +22,14 @@ const projects = [
     image: withBasePath("/images/portfolio.png"),
     url: "https://tapple214.github.io/apple-portfolio/",
   },
+  {
+    id: 3,
+    name: "The Box",
+    description:
+      "(UI only) Designed for a school project, this was created for a task in creating a carnival themed website. This was inspired by the year of the rabbit (CNY).",
+    image: withBasePath("/images/portfolio.png"),
+    url: "https://tapple214.github.io/apple-portfolio/",
+  },
 ];
 
 export default function CompSciContent() {
