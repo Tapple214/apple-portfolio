@@ -26,7 +26,15 @@ const projects = [
     id: 3,
     name: "The Box",
     description:
-      "(UI only) Designed for a school project, this was created for a task in creating a carnival themed website. This was inspired by the year of the rabbit (CNY).",
+      "(UI only) Designed for a school project, this was created for a task in creating a carnival themed website. This was inspired by the year of the rabbit (CNY). This was created using HTML, CSS, and JavaScript.",
+    image: withBasePath("/images/the-box.png"),
+    url: "#",
+  },
+  {
+    id: 4,
+    name: "SG Odyssey",
+    description:
+      "(UI only) A RESTfulpersonal blog website that possesses the ability to enable users to post, delete, edit, and view blogs. This was created using Node.js, Express, and MongoDB.",
     image: withBasePath("/images/portfolio.png"),
     url: "https://tapple214.github.io/apple-portfolio/",
   },
