@@ -85,7 +85,7 @@ export default function CompSciContent() {
                         width={250}
                         height={300}
                         className="object-cover w-full h-full"
-                        priority
+                        loading="lazy"
                       />
                     </div>
 

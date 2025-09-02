@@ -33,29 +33,41 @@ export default function Home() {
         {/* Welcome Section */}
         <div className="parallax__group">
           {/* Parallax Layers */}
-          <div 
+          <div
             className="parallax__layer l1 absolute inset-0 bg-center bg-cover transform translate-z-[-600px] z-[1]"
-            style={{ backgroundImage: `url(${withBasePath("/images/l1.png")})` }}
+            style={{
+              backgroundImage: `url(${withBasePath("/images/l1.png")})`,
+            }}
           ></div>
-          <div 
+          <div
             className="parallax__layer l2 absolute inset-0 bg-center bg-cover transform translate-z-[-525px] z-[2]"
-            style={{ backgroundImage: `url(${withBasePath("/images/l2.png")})` }}
+            style={{
+              backgroundImage: `url(${withBasePath("/images/l2.png")})`,
+            }}
           ></div>
-          <div 
+          <div
             className="parallax__layer l3 absolute inset-0 bg-center bg-cover transform translate-z-[-400px] z-[3]"
-            style={{ backgroundImage: `url(${withBasePath("/images/l3.png")})` }}
+            style={{
+              backgroundImage: `url(${withBasePath("/images/l3.png")})`,
+            }}
           ></div>
-          <div 
+          <div
             className="parallax__layer l4 absolute inset-0 bg-center bg-cover transform translate-z-[-250px] z-[4]"
-            style={{ backgroundImage: `url(${withBasePath("/images/l4.png")})` }}
+            style={{
+              backgroundImage: `url(${withBasePath("/images/l4.png")})`,
+            }}
           ></div>
-          <div 
+          <div
             className="parallax__layer l5 absolute inset-0 bg-center bg-cover transform translate-z-[-125px] z-[5]"
-            style={{ backgroundImage: `url(${withBasePath("/images/l5.png")})` }}
+            style={{
+              backgroundImage: `url(${withBasePath("/images/l5.png")})`,
+            }}
           ></div>
-          <div 
+          <div
             className="parallax__layer l6 absolute inset-0 bg-center bg-cover transform translate-z-0 z-[6]"
-            style={{ backgroundImage: `url(${withBasePath("/images/l6.png")})` }}
+            style={{
+              backgroundImage: `url(${withBasePath("/images/l6.png")})`,
+            }}
           ></div>
 
           {/* Hero Text */}
@@ -71,6 +83,8 @@ export default function Home() {
                 height={400}
                 className="rounded-lg mb-4 mx-auto"
                 priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
           </div>

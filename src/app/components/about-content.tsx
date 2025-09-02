@@ -14,8 +14,8 @@ export default function AboutContent() {
             <div className="mb-8">
               {/* <h3 className="text-2xl mb-4 text-[#e0dde9]">Hello!</h3> */}
               <p className="font-normal mb-6 text-[#c1b7e1]">
-                Hello, Apple here! A creative and computer
-                science student based in Singapore.
+                Hello, Apple here! A creative and computer science student based
+                in Singapore.
                 <br />
                 <br />
                 With a passion for coding and design, I aim to bridge the gap
@@ -98,7 +98,7 @@ export default function AboutContent() {
                   width={300}
                   height={400}
                   className="rounded-lg mb-10"
-                  priority
+                  loading="lazy"
                 />
 
                 <div className="ms-3 flex flex-col justify-start gap-6">
@@ -228,7 +228,7 @@ export default function AboutContent() {
                       width={70}
                       height={70}
                       className="rounded-lg"
-                      priority
+                      loading="lazy"
                     />
 
                     <span className="absolute left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 text-sm text-[#c1b7e190] font-thin transition-opacity">

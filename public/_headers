@@ -1,0 +1,28 @@
+# Performance and Security Headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache static assets
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache HTML files for shorter period
+/*.html
+  Cache-Control: public, max-age=3600
+
+# Compress text files
+/*.css
+  Content-Encoding: gzip
+
+/*.js
+  Content-Encoding: gzip
+
+/*.html
+  Content-Encoding: gzip
