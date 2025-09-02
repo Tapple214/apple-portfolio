@@ -34,7 +34,7 @@ const projects = [
     id: 4,
     name: "SG Odyssey",
     description:
-      "(UI only) A RESTfulpersonal blog website that possesses the ability to enable users to post, delete, edit, and view blogs. This was created using Node.js, Express, and MongoDB.",
+      "(UI only) A RESTfulpersonal blog website that possesses the ability to enable users to post, delete, edit, and view blogs. This was created using Node.js, Express, Bootstrap,and SQLite.",
     image: withBasePath("/images/sg-odyssey.png"),
     url: "#",
   },
